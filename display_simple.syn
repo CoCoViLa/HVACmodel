@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE scheme SYSTEM "scheme.dtd">
+<scheme package="ThermalModel" superclass="Process">
+<object name="Gr" type="MultiSeriesGraph" static="true">
+<properties x="346" y="48" xsize="1.0" ysize="1.0" strict="false"/>
+<fields>
+<field name="repaintImmediately" type="boolean" value="true"/>
+<field name="seriesNames" type="String[]" value="requiredT%%"/>
+<field name="axisAlwaysIncludeZero" type="boolean" value="true"/>
+<field name="showSeparateAxis" type="boolean" value="false"/>
+<field name="lineThickness" type="float" value="2.0f"/>
+</fields>
+</object>
+<object name="Process" type="Process" static="false">
+<properties x="22" y="23" xsize="1.0" ysize="1.0" strict="false"/>
+<fields>
+<field name="time" type="int" value="1440"/>
+<field name="T" type="double" value="1.0"/>
+<field name="delay" type="long" value="1"/>
+<field name="debug" type="boolean" value="false"/>
+<field name="done" type="void"/>
+<field name="repaintImmediately" type="boolean" value="true"/>
+</fields>
+</object>
+<object name="Timer" type="Clock" static="false">
+<properties x="341" y="164" xsize="1.0" ysize="1.0" strict="false"/>
+<fields>
+<field name="T" type="double" value="1.0"/>
+</fields>
+</object>
+<object name="Display_0" type="Display" static="false">
+<properties x="139" y="73" xsize="1.0" ysize="1.0" strict="false"/>
+<fields>
+<field name="temperature" type="double" value="21"/>
+</fields>
+</object>
+<connection obj1="Gr" port1="x" obj2="Timer" port2="out" strict="false">
+<breakpoints/>
+</connection>
+<connection obj1="Display_0" port1="temperature" obj2="Gr" port2="ys" strict="false">
+<breakpoints/>
+</connection>
+</scheme>
