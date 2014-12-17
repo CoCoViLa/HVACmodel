@@ -4,7 +4,7 @@ class Clock  {
 	double initstate, state, nextstate, finalstate;
 		double T, in, out;
 		
-		nextstate = state + in / T;
+		nextstate = state + in;
 		out = state;
 	
 		initstate = 0;

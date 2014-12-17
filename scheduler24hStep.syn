@@ -2,7 +2,7 @@
 <!DOCTYPE scheme SYSTEM "scheme.dtd">
 <scheme package="ThermalModel" superclass="Process">
 <object name="Gr" type="MultiSeriesGraph" static="true">
-<properties x="346" y="48" xsize="1.0" ysize="1.0" strict="false"/>
+<properties x="225" y="148" xsize="1.0" ysize="1.0" strict="false"/>
 <fields>
 <field name="repaintImmediately" type="boolean" value="true"/>
 <field name="seriesNames" type="String[]" value="requiredT%%"/>
@@ -12,7 +12,7 @@
 </fields>
 </object>
 <object name="Process" type="Process" static="false">
-<properties x="22" y="23" xsize="1.0" ysize="1.0" strict="false"/>
+<properties x="10" y="10" xsize="1.0" ysize="1.0" strict="false"/>
 <fields>
 <field name="time" type="int" value="1440"/>
 <field name="T" type="double" value="1.0"/>
@@ -23,21 +23,32 @@
 </fields>
 </object>
 <object name="Timer" type="Clock" static="false">
-<properties x="341" y="164" xsize="1.0" ysize="1.0" strict="false"/>
-<fields>
-<field name="T" type="double" value="1.0"/>
-</fields>
+<properties x="68" y="244" xsize="1.0" ysize="1.0" strict="false"/>
+<fields/>
 </object>
-<object name="Display_0" type="Display" static="false">
-<properties x="139" y="73" xsize="1.0" ysize="1.0" strict="false"/>
+<object name="Scheduler24hStep_0" type="Scheduler24hStep" static="false">
+<properties x="126" y="104" xsize="1.0" ysize="1.0" strict="false"/>
 <fields>
-<field name="temperature" type="double" value="21"/>
+<field name="nightBegin" type="int" value="22"/>
+<field name="nightEnd" type="int" value="6"/>
+<field name="setPointDay" type="double" value="21"/>
+<field name="setPointNight" type="double" value="18"/>
 </fields>
 </object>
 <connection obj1="Gr" port1="x" obj2="Timer" port2="out" strict="false">
-<breakpoints/>
+<breakpoints>
+<point x="260" y="219"/>
+<point x="96" y="219"/>
+</breakpoints>
 </connection>
-<connection obj1="Display_0" port1="temperature" obj2="Gr" port2="ys" strict="false">
-<breakpoints/>
+<connection obj1="Scheduler24hStep_0" port1="setPoint" obj2="Gr" port2="ys" strict="false">
+<breakpoints>
+<point x="173" y="174"/>
+</breakpoints>
+</connection>
+<connection obj1="Scheduler24hStep_0" port1="time" obj2="Timer" port2="out" strict="false">
+<breakpoints>
+<point x="97" y="131"/>
+</breakpoints>
 </connection>
 </scheme>

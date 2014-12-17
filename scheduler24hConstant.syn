@@ -2,10 +2,10 @@
 <!DOCTYPE scheme SYSTEM "scheme.dtd">
 <scheme package="ThermalModel" superclass="Process">
 <object name="Gr" type="MultiSeriesGraph" static="true">
-<properties x="346" y="48" xsize="1.0" ysize="1.0" strict="false"/>
+<properties x="109" y="134" xsize="1.0" ysize="1.0" strict="false"/>
 <fields>
 <field name="repaintImmediately" type="boolean" value="true"/>
-<field name="seriesNames" type="String[]" value="requiredT"/>
+<field name="seriesNames" type="String[]" value="requiredT%%"/>
 <field name="axisAlwaysIncludeZero" type="boolean" value="true"/>
 <field name="showSeparateAxis" type="boolean" value="false"/>
 <field name="lineThickness" type="float" value="2.0f"/>
@@ -23,29 +23,21 @@
 </fields>
 </object>
 <object name="Timer" type="Clock" static="false">
-<properties x="23" y="219" xsize="1.0" ysize="1.0" strict="false"/>
-<fields>
-<field name="T" type="double" value="1.0"/>
-</fields>
+<properties x="116" y="201" xsize="1.0" ysize="1.0" strict="false"/>
+<fields/>
 </object>
-<object name="Display" type="DisplayDN" static="false">
-<properties x="67" y="83" xsize="1.0" ysize="1.0" strict="false"/>
+<object name="Scheduler24hConstant_1" type="Scheduler24hConstant" static="false">
+<properties x="23" y="89" xsize="1.0" ysize="1.0" strict="false"/>
 <fields>
-<field name="temperatureDay" type="double" value="21.0"/>
-<field name="temperatureNight" type="double" value="18.0"/>
-<field name="nightBegin" type="int" value="22"/>
-<field name="nightEnd" type="int" value="6"/>
+<field name="setPoint" type="double" value="21"/>
 </fields>
 </object>
 <connection obj1="Gr" port1="x" obj2="Timer" port2="out" strict="false">
+<breakpoints/>
+</connection>
+<connection obj1="Gr" port1="ys" obj2="Scheduler24hConstant_1" port2="setPoint" strict="false">
 <breakpoints>
-<point x="388" y="227"/>
+<point x="67" y="160"/>
 </breakpoints>
-</connection>
-<connection obj1="Display" port1="temperature" obj2="Gr" port2="ys" strict="false">
-<breakpoints/>
-</connection>
-<connection obj1="Timer" port1="out" obj2="Display" port2="time" strict="false">
-<breakpoints/>
 </connection>
 </scheme>

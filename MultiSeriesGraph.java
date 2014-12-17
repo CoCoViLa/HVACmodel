@@ -37,7 +37,7 @@ class MultiSeriesGraph {
             dataset.addSeries( new XYSeries( "" + i, false, true ) );
         }
 
-        JFreeChart chart = ChartFactory.createXYLineChart( "", "time(h)", "value",
+        JFreeChart chart = ChartFactory.createXYLineChart( "", "time(min)", "value",
                 dataset, PlotOrientation.VERTICAL, true, true, false );
 
         plot = chart.getXYPlot();
@@ -88,7 +88,7 @@ class MultiSeriesGraph {
         int skip = 50;
         boolean repaint = repaintImmediately && ( count < skip || count % skip == 0 ); 
         for ( int i = 0; i < ys.length; i++ ) {
-           dataset.getSeries( i ).add( x/60 , ys[i], repaint );
+           dataset.getSeries( i ).add( x , ys[i], repaint );
  
         }
     }

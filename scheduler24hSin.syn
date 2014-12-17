@@ -1,30 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE scheme SYSTEM "scheme.dtd">
 <scheme package="ThermalModel" superclass="Process">
-<object name="OutdoorConditions" type="OutdoorConditions" static="false">
-<properties x="10" y="155" xsize="1.0" ysize="1.0" strict="false"/>
-<fields>
-<field name="airDensity" type="double" value="1.225"/>
-<field name="c" type="double" value="1005.4"/>
-<field name="min" type="double" value="-10.0"/>
-<field name="max" type="double" value="30.0"/>
-</fields>
-</object>
 <object name="Gr" type="MultiSeriesGraph" static="true">
-<properties x="214" y="32" xsize="1.0" ysize="1.0" strict="false"/>
+<properties x="212" y="101" xsize="1.0" ysize="1.0" strict="false"/>
 <fields>
 <field name="repaintImmediately" type="boolean" value="true"/>
-<field name="seriesNames" type="String[]" value="outdoorT"/>
+<field name="seriesNames" type="String[]" value="outdoorT%%"/>
 <field name="axisAlwaysIncludeZero" type="boolean" value="true"/>
 <field name="showSeparateAxis" type="boolean" value="false"/>
 <field name="lineThickness" type="float" value="2.0f"/>
 </fields>
 </object>
 <object name="Timer" type="Clock" static="false">
-<properties x="23" y="283" xsize="1.0" ysize="1.0" strict="false"/>
-<fields>
-<field name="T" type="double" value="1.0"/>
-</fields>
+<properties x="19" y="177" xsize="1.0" ysize="1.0" strict="false"/>
+<fields/>
 </object>
 <object name="Process" type="Process" static="false">
 <properties x="14" y="19" xsize="1.0" ysize="1.0" strict="false"/>
@@ -37,17 +26,25 @@
 <field name="repaintImmediately" type="boolean" value="true"/>
 </fields>
 </object>
-<connection obj1="OutdoorConditions" port1="temperature" obj2="Gr" port2="ys" strict="false">
-<breakpoints>
-<point x="76" y="80"/>
-</breakpoints>
-</connection>
+<object name="Scheduler24hSin_0" type="Scheduler24hSin" static="false">
+<properties x="82" y="81" xsize="1.0" ysize="1.0" strict="false"/>
+<fields>
+<field name="min" type="double" value="-10"/>
+<field name="maxTime" type="double" value="14"/>
+<field name="max" type="double" value="30"/>
+</fields>
+</object>
 <connection obj1="Gr" port1="x" obj2="Timer" port2="out" strict="false">
 <breakpoints>
-<point x="258" y="290"/>
+<point x="247" y="190"/>
 </breakpoints>
 </connection>
-<connection obj1="OutdoorConditions" port1="time" obj2="Timer" port2="out" strict="false">
+<connection obj1="Scheduler24hSin_0" port1="time" obj2="Timer" port2="out" strict="false">
+<breakpoints>
+<point x="47" y="109"/>
+</breakpoints>
+</connection>
+<connection obj1="Gr" port1="ys" obj2="Scheduler24hSin_0" port2="setPoint" strict="false">
 <breakpoints/>
 </connection>
 </scheme>

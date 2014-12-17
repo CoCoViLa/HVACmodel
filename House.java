@@ -45,11 +45,13 @@ double compute(double rt, double ot, double req, double heatFlow, double airM, d
 	double timeUnit1=3600.0;
 	double timeUnit2=60.0;
 	double t=0;
-	double losses=(temperature-outdoorTemperature)/req;
-	double deltaT=((heatFlow-losses)/(airM*c))/timeUnit2;
+heatFlow=0;
+double losses=(rt-ot)/req;
+
+	double deltaT=((heatFlow*timeUnit2-losses)/(airM*c));
 
 	t=rt+deltaT;
-	//System.out.println("\t rt="+temperature+"\t hf="+heatFlow+"\t l="+losses+"\t dT="+deltaT);
+System.out.println("\t rt="+temperature+"\t hf="+heatFlow+"\t l="+losses+"\t dT="+deltaT);
 
 
 return t;

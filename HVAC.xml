@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE package SYSTEM "package.dtd">
+<package>
+    <name>ThermalModel</name>
+    <description>Thermal model of the house</description>
+<class type="class">
+	<name>Process</name>
+	<description>Process for any approximation method</description>
+	<icon>images/ico_process.png</icon>
+<graphics>
+<bounds x="0" y="0" width="57" height="56"/>
+<image x="3" y="3" width="50" height="50" path="\images\process.png" fixed="true" />
+</graphics>
+	<fields>
+		<field name="time" type="int" value="1440" />
+		<field name="T" type="double" value="1" />
+		<field name="delay" type="long" value="1" />
+		<field name="debug" type="boolean" value="false" />
+		<field name="repaintImmediately" type="boolean" value="true" />
+		<field name="done" type="void"/>
+	</fields>
+</class>
+<class type="class">
+	<name>Scheduler24hConstant</name>
+	<description>Set point with constant value</description>
+	<icon>images/ico_scheduler_24h_const.png</icon>
+<graphics>
+<bounds x="0" y="0" width="52" height="53"/>
+<image x="1" y="1" width="50" height="50" path="\images\scheduler_24h_const.png" fixed="true" />
+</graphics>
+	<ports>
+		<port name="setPoint" type="double" x="45" y="47" portConnection="" strict="false" />
+	</ports>
+	<fields>
+		<field name="setPoint" type="double" value="21" />
+	</fields>
+</class>
+<class type="class">
+	<name>Scheduler24hStep</name>
+	<description>Set point for day and night</description>
+	<icon>images/ico_scheduler_24h_step.png</icon>
+<graphics>
+<bounds x="0" y="0" width="58" height="58"/>
+<image x="2" y="2" width="50" height="50" path="\images\scheduler_24h_step.png" fixed="true" />
+</graphics>
+	<ports>
+		<port name="setPoint" type="double" x="47" y="46" portConnection="" strict="false" />
+		<port name="time" type="double" x="6" y="28" portConnection="" strict="false" />
+	</ports>
+	<fields>
+		<field name="nightBegin" type="int" value="22" />
+		<field name="nightEnd" type="int" value="6" />
+		<field name="setPointDay" type="double" value="21" />
+		<field name="setPointNight" type="double" value="18" />
+	</fields>
+</class>
+<class type="class">
+	<name>Scheduler24hSin</name>
+	<description>Set point with value modeled by sin</description>
+	<icon>images/ico_scheduler_24h_sin.png</icon>
+<graphics>
+<bounds x="0" y="0" width="58" height="54"/>
+<rect x="401" y="222" width="0" height="0" colour="-16777216" filled="false" fixed="false" stroke="1" linetype="0.0" transparency="255"/>
+<image x="3" y="2" width="50" height="50" path="\images\scheduler_24h_sin.png" fixed="true" />
+</graphics>
+	<ports>
+		<port name="setPoint" type="double" x="49" y="46" portConnection="" strict="false" />
+		<port name="time" type="double" x="4" y="28" portConnection="" strict="false" />
+	</ports>
+	<fields>
+		<field name="min" type="double" value="-10" />
+		<field name="maxTime" type="double" value="14" />
+		<field name="max" type="double" value="30" />
+	</fields>
+</class>
+<class type="class">
+	<name>Clock</name>
+	<description>clock</description>
+	<icon>images/ico_clock.png</icon>
+<graphics>
+<bounds x="0" y="0" width="57" height="63"/>
+<image x="3" y="10" width="50" height="50" path="\images\clock.png" fixed="true" />
+</graphics>
+	<ports>
+		<port name="out" type="double" x="28" y="13" portConnection="" strict="false" />
+	</ports>
+</class>
+<class type="class">
+	<name>MultiSeriesGraph</name>
+	<description>Multi Series Graph</description>
+	<icon>images/ico_multiSeriesGraph.png</icon>
+<graphics>
+<bounds x="0" y="0" width="64" height="65"/>
+<image x="7" y="4" width="50" height="50" path="\images\multiSeriesGraph.png" fixed="true" />
+</graphics>
+	<ports>
+		<port name="ys" type="double[]" x="6" y="26" portConnection="" strict="false" multi="true" />
+		<port name="x" type="double" x="35" y="56" portConnection="" strict="false" />
+	</ports>
+	<fields>
+		<field name="seriesNames" type="String[]"/>
+		<field name="repaintImmediately" type="boolean" value="true" />
+		<field name="lineThickness" type="float" value="1.0f" />
+		<field name="axisAlwaysIncludeZero" type="boolean" value="true" />
+		<field name="showSeparateAxis" type="boolean" value="false" />
+	</fields>
+</class>
+<class type="class">
+	<name>ONOFFController3Way</name>
+	<description>On/off controller 3way</description>
+	<icon>images/ico_on_off_controller_3way.png</icon>
+<graphics>
+<bounds x="0" y="0" width="65" height="60"/>
+<line x1="-308" y1="99" x2="-308" y2="99" colour="-16777216" fixed="false" stroke="2" linetype="0.0" transparency="255"/>
+<image x="8" y="4" width="50" height="50" path="\images\on_off_controller_3way.png" fixed="true" />
+</graphics>
+	<ports>
+		<port name="setPoint" type="double" x="7" y="27" portConnection="" strict="false" />
+		<port name="processValue" type="double" x="33" y="53" portConnection="" strict="false" />
+		<port name="signal" type="int" x="58" y="27" portConnection="" strict="false" />
+	</ports>
+	<fields>
+		<field name="hysteresis" type="double" value="2.0" />
+	</fields>
+</class>
+<class type="class">
+	<name>ONOFFController2Way</name>
+	<description>On/off controller 2way</description>
+	<icon>images/ico_on_off_controller_2way.png</icon>
+<graphics>
+<bounds x="0" y="0" width="65" height="60"/>
+<line x1="-308" y1="99" x2="-308" y2="99" colour="-16777216" fixed="false" stroke="2" linetype="0.0" transparency="255"/>
+<image x="8" y="2" width="50" height="50" path="\images\on_off_controller_2way.png" fixed="true" />
+</graphics>
+	<ports>
+		<port name="setPoint" type="double" x="7" y="27" portConnection="" strict="false" />
+		<port name="processValue" type="double" x="33" y="53" portConnection="" strict="false" />
+		<port name="signal" type="int" x="58" y="27" portConnection="" strict="false" />
+	</ports>
+	<fields>
+		<field name="hysteresis" type="double" value="2.0" />
+	</fields>
+</class>
+<class type="class">
+	<name>SignalScheduler</name>
+	<description>Allowes to control object in time</description>
+	<icon>images/ico_multiply.png</icon>
+<graphics>
+<bounds x="0" y="0" width="67" height="59"/>
+<image x="9" y="-1" width="50" height="50" path="\images\multiply.png" fixed="true" />
+</graphics>
+	<ports>
+		<port name="s" type="int" x="8" y="11" portConnection="" strict="false" />
+		<port name="schedule" type="double" x="58" y="11" portConnection="" strict="false" />
+		<port name="signal" type="int" x="34" y="48" portConnection="" strict="false" />
+	</ports>
+</class>
+<class type="class">
+	<name>ElectricHeaterPanel</name>
+	<description>Electric heater</description>
+	<icon>images/ico_electricHeater.png</icon>
+<graphics>
+<bounds x="0" y="0" width="51" height="53"/>
+<image x="-1" y="3" width="50" height="50" path="\images\electricHeater.png" fixed="true" />
+</graphics>
+	<ports>
+		<port name="dQdT" type="double" x="48" y="27" portConnection="" strict="false" />
+		<port name="signal" type="int" x="26" y="6" portConnection="" strict="false" />
+	</ports>
+	<fields>
+		<field name="heatFlow" type="double" value="1000" />
+	</fields>
+</class>
+<class type="class">
+	<name>Occupants</name>
+	<description>People in room</description>
+	<icon>images/ico_occupants.png</icon>
+<graphics>
+<bounds x="0" y="0" width="53" height="54"/>
+<image x="2" y="-1" width="50" height="50" path="\images\occupants.png" fixed="true" />
+</graphics>
+	<ports>
+		<port name="dQdT" type="double" x="27" y="6" portConnection="" strict="false" />
+	</ports>
+	<fields>
+		<field name="heatFlowPerOne" type="double" value="80" />
+		<field name="numberOfOccupants" type="int" value="8" />
+	</fields>
+</class>
+<class type="class">
+	<name>Weather</name>
+	<description>Weather, outdoor conditions</description>
+	<icon>images/ico_weather.png</icon>
+<graphics>
+<bounds x="0" y="0" width="60" height="56"/>
+<rect x="381" y="264" width="0" height="0" colour="-16777216" filled="false" fixed="false" stroke="1" linetype="0.0" transparency="255"/>
+<image x="6" y="2" width="50" height="50" path="\images\weather.png" fixed="true" />
+</graphics>
+	<ports>
+		<port name="temperature" type="double" x="5" y="46" portConnection="" strict="false" />
+		<port name="airProperties" type="alias" x="50" y="45" portConnection="" strict="false" />
+	</ports>
+	<fields>
+		<field name="airDensity" type="double" value="1.2250" />
+		<field name="c" type="double" value="1005.4" />
+	</fields>
+</class>
+<class type="class">
+	<name>IndoorConditions</name>
+	<description>Air in the building</description>
+	<icon>images/ico_indoorConditions.png</icon>
+<graphics>
+<bounds x="0" y="0" width="66" height="72"/>
+<image x="3" y="13" width="50" height="47" path="\images\indoorConditions.png" fixed="true" />
+</graphics>
+	<ports>
+		<port name="qs" type="double[]" x="29" y="7" portConnection="" strict="false" multi="true" />
+		<port name="tout" type="double" x="57" y="43" portConnection="" strict="false" />
+		<port name="airProperties" type="alias" x="16" y="65" portConnection="" strict="false" />
+		<port name="airVolume" type="double" x="38" y="65" portConnection="" strict="false" />
+	</ports>
+	<fields>
+		<field name="initialTemperature" type="double" value="18" />
+	</fields>
+</class>
+<class type="class">
+	<name>BuildingPlanType1</name>
+	<description>Model of room with one wall as window</description>
+	<icon>images/ico_roomType1.png</icon>
+<graphics>
+<bounds x="0" y="0" width="69" height="60"/>
+<image x="8" y="6" width="50" height="49" path="\images\roomType1.png" fixed="true" />
+</graphics>
+	<ports>
+		<port name="airProperties" type="alias" x="8" y="14" portConnection="" strict="false" />
+		<port name="dQdT" type="double" x="56" y="52" portConnection="" strict="false" />
+		<port name="airVolume" type="double" x="26" y="49" portConnection="" strict="false" />
+		<port name="tIndoor" type="double" x="41" y="6" portConnection="" strict="false" />
+	</ports>
+	<fields>
+		<field name="roomLength" type="double" value="5" />
+		<field name="roomWidth" type="double" value="5" />
+		<field name="roomHeight" type="double" value="3" />
+		<field name="windowUvalue" type="double" value="1.2" />
+	</fields>
+</class>
+<class type="class">
+	<name>Cost</name>
+	<description>Computing cost</description>
+	<icon>images/ico_cost.png</icon>
+<graphics>
+<bounds x="0" y="0" width="79" height="59"/>
+<image x="15" y="2" width="50" height="50" path="\images\cost.png" fixed="true" />
+</graphics>
+	<ports>
+		<port name="heatFlow" type="double" x="13" y="28" portConnection="" strict="false" />
+		<port name="accCost" type="double" x="66" y="28" portConnection="" strict="false" />
+	</ports>
+	<fields>
+		<field name="price" type="double" value="0.0588" />
+	</fields>
+</class>
+<class type="class">
+	<name>Ventilation</name>
+	<description>Ventilation for the building</description>
+	<icon>images/ico_ventilation.png</icon>
+<graphics>
+<bounds x="0" y="0" width="62" height="51"/>
+<image x="6" y="1" width="50" height="50" path="\images\ventilation.png" fixed="true" />
+</graphics>
+	<ports>
+		<port name="dQdT" type="double" x="55" y="25" portConnection="" strict="false" />
+		<port name="airVolume" type="double" x="15" y="45" portConnection="" strict="false" />
+		<port name="airProperties" type="alias" x="14" y="8" portConnection="" strict="false" />
+		<port name="inTemperature" type="double" x="5" y="27" portConnection="" strict="false" />
+	</ports>
+	<fields>
+		<field name="n" type="int" value="1" />
+	</fields>
+</class>
+</package>
