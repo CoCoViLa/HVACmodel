@@ -1,0 +1,10 @@
+<h1>Subsystems</h2>
+<p>We can logically subdivide our modeled system for several subsystems. Each subsystem is modeled by one component.</p>
+<p>There are two main components: <em>House</em>, which covers the subsystem of the room that will be heated or cooled, and <em>AirConditioner</em>, which is responsible for heating/cooling process.</p>
+<figure>
+  <img src="articles/img/componentpane.png" alt="componentPane" width="342px">
+  <figcaption>  Component pane</figcaption>
+</figure> 
+<p>Also, some additional components are required to present the work-flow of the system: <em>OutdoorConditions</em> describe the properties of the air and model the temperature daily variations, <em>DisplayDN(Display)</em> is required for setting up the temperature, that we want to achieve in the room, <em>Thermostat</em> is the controlling device, that sends signal to <em>AirConditioner</em>, and <em>Cost </em> describes the function, that is required to compute the cost of the heating/cooling modeled house.
+<p>
+For simulation purposes we add several utilities: <em>Timer</em> for modeling time, <em>MultiSeriesGraph</em> for visualization and <em>Process</em>, which runs the whole simulation procedure.</p>

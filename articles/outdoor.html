@@ -1,0 +1,38 @@
+<h1>Component: Outdoor conditions</h1>
+<p> The main idea of the <em>OutdoorConditions</em> component is to simulate the properties and behavior of the air and outdoor conditions. There are several constant parameters, such as heat capacity or air density, also there is one time dependent parameter - temperature, so the temperature is different for day and night periods.</p>
+	 <figure>
+		<img src="articles/img/outdoorVisual.png" alt="outdoorVisual.png" >
+		<figcaption>Figure: Visual representation</figcaption>
+	</figure> 
+
+<p>The component has several properties:</p>
+<ul>
+	<li> name</li>
+	<li> <em>airDeinsity</em> (default value 1.225) - density of air at sea level 1.225 (kg/m^3);</li>
+		<li> <em>c</em> (default value 1005.4) - heat capacity of air (273K) 1005.4 (J/kg-K);</li>
+			<li>  <em>min</em> (default value -10.0) - minimal temperature (C);</li>
+				<li> <em>max</em> (default value 30.0) - maximal temperature (C);</li>
+</ul>
+	 <figure>
+		<img src="articles/img/outdoorProperties.png" alt="outdoorProperties.png" >
+		<figcaption>Figure: Outdoor conditions</figcaption>
+	</figure> 
+
+
+<p>The outputs of the component are air density, heat capacity and temperature, the input is signal from timer.</p>
+
+ <p>The most complex part here is modeling  temperature daily variations. Initially, we have two input parameters <em>min</em> and <em>max</em>. We constructed the time-temperature function using sinusoid so, that the maximal value of the temperature is at 14.00.</p>
+ 
+<p>The simulation results for the scheme <em>outdoor.syn</em>. </p>
+	 <figure>
+		<img src="articles/img/outdoorModelScheme.png" alt="outdoorModelScheme.png" >
+		<figcaption>Figure: Scheme</figcaption>
+	</figure> 
+	
+
+<p>The outdoor temperature <em>outdoorT</em> changes over the time according timer signal. The temperature daily variation function can be redefined if required.</p>
+
+	 <figure>
+		<img src="articles/img/outdoorModelGraph.png" alt="outdoorModelGraph.png"  width="550px" >
+		<figcaption>Figure: Temperature daily variation</figcaption>
+	</figure> 

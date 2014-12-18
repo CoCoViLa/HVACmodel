@@ -1,0 +1,89 @@
+
+<h1>Component:House</h1>
+<figure>
+		<img src="articles/img/houseVisual.png" alt="houseVisual.png" >
+		<figcaption>Figure: Visual representation</figcaption>
+	</figure> 
+<p><em>House</em> component models the room with given dimensions and thermal properties, such as:
+<ul>
+	<li> room height, width, length;</li>
+	<li> number and size of windows;</li>
+	<li> the thermal properties of wall material and glass (for windows)</li>
+</ul>
+
+<figure>
+		<img src="articles/img/houseProperties.png" alt="houseProperties.png" >
+		<figcaption>Figure: House</figcaption>
+	</figure> 
+	
+<p>We can compute the area of windows.</p>
+<div class="equation">
+	S<sub>windows</sub>=n* h<sub>windows</sub>* w<sub>windows</sub>;
+</div>
+<p>where:</p>
+<ul>
+	<li> S<sub>windows</sub> - area;</li>
+	<li> n - number of windows;</li>
+	<li> h<sub>windows</sub> - height;</li>
+	<li> w<sub>windows</sub> - width;</li>
+</ul>
+Using S<sub>windows</sub> we can compute the thermal resistance of windows.
+ 	<div class="equation">
+		R<sub>windows</sub>=(L<sub>windows</sub>)/({K<sub>windows</sub>* S<sub>windows</sub>);
+</div>
+<p>where K<sub>windows</sub>=0.78(J/sec/m/C) - for glass and thickness L<sub>windows</sub>=0.01(m).</p>
+
+<p>The similar computation can be done for walls.</p>
+<div class="equation">
+	S<sub>wall</sub>=2 * l<sub>room</sub> * h<sub>room</sub> + 2* w<sub>room</sub> * h<sub>room</sub> - S<sub>windows</sub>;
+</div>
+<p> where:</p>
+<ul>
+	<li> S<sub>windows</sub> - area of windows;</li>
+		<li> S<sub>wall</sub> - area of walls;</li>
+	<li> h<sub>room</sub> - height;</li>
+	<li> w<sub>room</sub> - width;</li>
+		<li> l<sub>room</sub> - length;</li>
+</ul>
+
+<p>We choose glass wool as material for walls , so K<sub>wall</sub>=0.5(J/sec/m/C), wall thickness L<sub>walls</sub>=0.24(m) and thermal resistance of walls is R<sub>wall</sub> </p>
+ 	<div class="equation">
+	R<sub>wall</sub>=(L<sub>wall</sub>)/(K<sub>wall</sub>* S<sub>wall</sub>);
+</div>
+
+<p>The equivalent thermal resistance of house R<sub>eq</sub> is computed using both  R<sub>wall</sub> and R<sub>windows</sub>.</p>
+ 	<div class="equation">
+	R<sub>eq</sub>=(R<sub>wall</sub>* R<sub>windows</sub>)/(R<sub>wall</sub>+ R<sub>windows</sub>);
+</div>
+
+<p>For further computation we also require the mass of the air in the room , which is computed using volume of the room and density of the air d<sub>air</sub></p>.
+<div class="equation">
+	m<sub>air</sub>=l<sub>room</sub>* h<sub>room</sub> * w<sub>room</sub> * d<sub>air</sub>;
+</div>
+
+<p>The are two main processes, that effect the temperature of the house. The first one is heating by air conditioner and second is heat losses. Heat losses can be computed according properties of the house and outdoor conditions.</p> 
+
+<div class="equation">
+	L=(T<sub>room</sub>-T<sub>outdoor</sub>)/R<sub>eq</sub>
+</div>
+<p>where:</p>
+<ul>
+	<li> L - losses (J/min)</li>
+		<li> T<sub>room</sub> - room temperature (C)</li>
+			<li> T<sub>outdoor</sub> - outdoor temperature (C)</li>
+			<li> R<sub>eq</sub> - equivalent thermal resistance</li>
+</ul>
+<p>Combining those two processes we can get the temperature change. The temperature value at the next time interval is computed as sum of previous value and deltaT.</p>
+<div class="equation">
+	deltaT=1/(m<sub>air</sub>* c<sub>air</sub>)* (HF-L)
+</div>
+<p>where:</p>
+<ul>
+	<li> T - temperature change (C/min);</li>
+		<li> m<sub>air</sub> - air mass (kg)</li>
+			<li> c<sub>air</sub> - air heat capacity (J/kg-K);</li>
+	<li> L - losses (J/min);</li>
+		<li>  HF - heat flow (J/min);</li>
+</ul>
+<p>The output is the current temperature indoor. The inputs are: heat flow from air heater, properties of the house and outdoor conditions.</p>
+

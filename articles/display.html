@@ -1,0 +1,65 @@
+<h1>Component: Display</h1>
+<p>This component is required for setting up the temperature we want to hold indoors. There are two possibilities: the easiest way is set up the constant temperature for the whole day, this is modeled by <em>Display</em>, the component <em>DisplayDN</em> allows to model more complex situation, where we can assign two temperatures for day and night. </p>
+
+
+<h2>Display</h2>
+
+<p>The <em>Display</em> is required for setting up the required temperature we want to get indoors. The temperature value is user defined parameter  and stays constant for the whole time of simulation. </p>
+	 <figure>
+		<img src="articles/img/displayProperties.png" alt="displayProperties">
+		<figcaption>Figure: Properties</figcaption>
+	</figure> 
+	
+<p>There are only two parameters for this component: name and the temperature value. The default value for<em>temperature</em> is 21 (C).  So, the output of this component is temperature.</p>
+	<figure>
+		<img src="articles/img/displayVisual.png" alt="displayVisual">
+		<figcaption>Figure: Visual representation</figcaption>
+	</figure> 
+
+<p>To illustrate the work-flow of this component we can compose the Scheme  (also can be found in <em>display_simple.syn</em>), that visualizes the behavior of the component during period of time . 
+	<figure>
+		<img src="articles/img/displayModelScheme.png" alt="displayModelScheme.png">
+		<figcaption>Figure: Scheme</figcaption>
+	</figure> 
+As you can see, the output value <em>temperature</em> is constant.</p>
+	<figure>
+		<img src="articles/img/displayModelGraph.png" alt="displayModelGraph.png" width="550px">
+		<figcaption>Figure: Display with constant value</figcaption>
+	</figure> 
+	
+
+<h2>DisplayDN</h2>
+<p>Compared to previous component <em>Display</em>, the <em>DisplayDN</em> has more complex behavior. It is done to present the situation, when we need to set up two different temperature values for day and night. </p>
+	<figure>
+		<img src="articles/img/displayDNVisual.png" alt="displayDNVisual.png">
+		<figcaption>Figure: Visual representation</figcaption>
+	</figure> 
+
+<p>The properties of the component are the following :</p>
+<ul>
+	<li> name;</li>
+	<li><em>temperatureDay</em> (default value 21).  The temperature value for the day (C);</li>
+	<li><em>temperatureNight</em> (default value 18).  The temperature value for the night (C);</li>
+	<li><em>nightBegin</em> (default value 22.00). Time, when night begins;</li>
+	<li> <em>nightEnd</em> (default value 6.00). Time, when night ends;</li>
+</ul>
+	<figure>
+		<img src="articles/img/displayDNProperties.png" alt="displayDNProperties.png">
+		<figcaption>Figure: Properties</figcaption>
+	</figure> 
+	
+<p>The output of the component is <em>temperature</em>. The input of the component is time signal from timer.</p>
+<p>For simulation of the behavior of the <em>DisplayDN</em> component we composed scheme <em>display.syn</em> . </p>
+	<figure>
+		<img src="articles/img/displayDNModelScheme.png" alt="displayDNModelScheme.png">
+		<figcaption>Figure: Scheme</figcaption>
+	</figure> 
+<p>As you can see the output depends on time according to presented parameters.</p>
+	<figure>
+		<img src="articles/img/displayDNModelGraph.png" alt="displayDNModelGraph.png" width="550px">
+		<figcaption>Figure: Display with day/night variation</figcaption>
+	</figure> 
+
+
+
+
