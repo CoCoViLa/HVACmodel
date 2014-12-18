@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE scheme SYSTEM "scheme.dtd">
-<scheme package="ThermalModel" superclass="Process">
+<scheme package="HVACmodeling" superclass="Process">
 <object name="Gr" type="MultiSeriesGraph" static="true">
-<properties x="109" y="134" xsize="1.0" ysize="1.0" strict="false"/>
+<properties x="109" y="97" xsize="1.0" ysize="1.0" strict="false"/>
 <fields>
 <field name="repaintImmediately" type="boolean" value="true"/>
 <field name="seriesNames" type="String[]" value="requiredT%%"/>
@@ -36,8 +36,6 @@
 <breakpoints/>
 </connection>
 <connection obj1="Gr" port1="ys" obj2="Scheduler24hConstant_1" port2="setPoint" strict="false">
-<breakpoints>
-<point x="67" y="160"/>
-</breakpoints>
+<breakpoints/>
 </connection>
 </scheme>

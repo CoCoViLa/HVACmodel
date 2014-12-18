@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE scheme SYSTEM "scheme.dtd">
-<scheme package="ThermalModel" superclass="Process">
+<scheme package="HVACmodeling" superclass="Process">
 <object name="Gr" type="MultiSeriesGraph" static="true">
-<properties x="212" y="101" xsize="1.0" ysize="1.0" strict="false"/>
+<properties x="213" y="83" xsize="1.0" ysize="1.0" strict="false"/>
 <fields>
 <field name="repaintImmediately" type="boolean" value="true"/>
 <field name="seriesNames" type="String[]" value="outdoorT%%"/>
@@ -30,8 +30,8 @@
 <properties x="82" y="81" xsize="1.0" ysize="1.0" strict="false"/>
 <fields>
 <field name="min" type="double" value="-10"/>
-<field name="maxTime" type="double" value="14"/>
 <field name="max" type="double" value="30"/>
+<field name="maxTime" type="double" value="14"/>
 </fields>
 </object>
 <connection obj1="Gr" port1="x" obj2="Timer" port2="out" strict="false">

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE scheme SYSTEM "scheme.dtd">
-<scheme package="ThermalModel" superclass="God">
+<scheme package="HVACmodeling" superclass="God">
 <object name="TemperatureGraph" type="MultiSeriesGraph" static="true">
-<properties x="447" y="38" xsize="1.0" ysize="1.0" strict="false"/>
+<properties x="581" y="85" xsize="1.0" ysize="1.0" strict="false"/>
 <fields>
 <field name="repaintImmediately" type="boolean" value="true"/>
 <field name="seriesNames" type="String[]" value="roomT%%outdoorT%%requiredT%%"/>
@@ -12,7 +12,7 @@
 </fields>
 </object>
 <object name="God" type="Process" static="false">
-<properties x="872" y="457" xsize="1.0" ysize="1.0" strict="false"/>
+<properties x="40" y="304" xsize="1.0" ysize="1.0" strict="false"/>
 <fields>
 <field name="time" type="int" value="1440"/>
 <field name="T" type="double" value="1.0"/>
@@ -23,29 +23,29 @@
 </fields>
 </object>
 <object name="Timer" type="Clock" static="false">
-<properties x="663" y="81" xsize="1.0" ysize="1.0" strict="false"/>
+<properties x="588" y="173" xsize="1.0" ysize="1.0" strict="false"/>
 <fields/>
 </object>
 <object name="ElectricHeater" type="ElectricHeaterPanel" static="false">
-<properties x="427" y="130" xsize="1.0" ysize="1.0" strict="false"/>
+<properties x="308" y="82" xsize="1.0" ysize="1.0" strict="false"/>
 <fields>
 <field name="heatFlow" type="double" value="1000.0"/>
 </fields>
 </object>
 <object name="ONOFFcontroller" type="ONOFFController2Way" static="false">
-<properties x="800" y="47" xsize="1.0" ysize="1.0" strict="false"/>
+<properties x="155" y="62" xsize="1.0" ysize="1.0" strict="false"/>
 <fields>
 <field name="hysteresis" type="double" value="2.0"/>
 </fields>
 </object>
 <object name="TemperatureSetPoint" type="Scheduler24hConstant" static="false">
-<properties x="28" y="30" xsize="1.0" ysize="1.0" strict="false"/>
+<properties x="14" y="54" xsize="1.0" ysize="1.0" strict="false"/>
 <fields>
 <field name="setPoint" type="double" value="20.0"/>
 </fields>
 </object>
 <object name="OutdoorTemperature" type="Scheduler24hConstant" static="false">
-<properties x="28" y="136" xsize="1.0" ysize="1.0" strict="false"/>
+<properties x="14" y="140" xsize="1.0" ysize="1.0" strict="false"/>
 <fields>
 <field name="setPoint" type="double" value="-5.0"/>
 </fields>
@@ -58,20 +58,20 @@
 </fields>
 </object>
 <object name="Students" type="Occupants" static="false">
-<properties x="238" y="187" xsize="1.0" ysize="1.0" strict="false"/>
+<properties x="215" y="164" xsize="1.0" ysize="1.0" strict="false"/>
 <fields>
 <field name="heatFlowPerOne" type="double" value="80.0"/>
 <field name="numberOfOccupants" type="int" value="1"/>
 </fields>
 </object>
 <object name="IndoorAir" type="IndoorConditions" static="false">
-<properties x="337" y="249" xsize="1.0" ysize="1.0" strict="false"/>
+<properties x="402" y="130" xsize="1.0" ysize="1.0" strict="false"/>
 <fields>
 <field name="initialTemperature" type="double" value="18.0"/>
 </fields>
 </object>
 <object name="Auditoorium" type="BuildingPlanType1" static="false">
-<properties x="433" y="370" xsize="1.0" ysize="1.0" strict="false"/>
+<properties x="403" y="292" xsize="1.0" ysize="1.0" strict="false"/>
 <fields>
 <field name="roomLength" type="double" value="5.0"/>
 <field name="roomWidth" type="double" value="5.0"/>
@@ -80,32 +80,30 @@
 </fields>
 </object>
 <object name="NaturalVentilation" type="Ventilation" static="false">
-<properties x="701" y="448" xsize="1.0" ysize="1.0" strict="false"/>
+<properties x="277" y="273" xsize="1.0" ysize="1.0" strict="false"/>
 <fields>
 <field name="n" type="int" value="1"/>
 </fields>
 </object>
 <connection obj1="TemperatureGraph" port1="x" obj2="Timer" port2="out" strict="false">
-<breakpoints>
-<point x="482" y="109"/>
-<point x="661" y="31"/>
-<point x="706" y="58"/>
-</breakpoints>
+<breakpoints/>
 </connection>
 <connection obj1="ONOFFcontroller" port1="setPoint" obj2="TemperatureSetPoint" port2="setPoint" strict="false">
-<breakpoints>
-<point x="766" y="18"/>
-<point x="185" y="18"/>
-</breakpoints>
+<breakpoints/>
 </connection>
 <connection obj1="TemperatureSetPoint" port1="setPoint" obj2="TemperatureGraph" port2="ys" strict="false">
 <breakpoints>
-<point x="153" y="65"/>
+<point x="100" y="24"/>
+<point x="475" y="25"/>
 </breakpoints>
 </connection>
 <connection obj1="TemperatureGraph" port1="ys" obj2="OutdoorTemperature" port2="setPoint" strict="false">
 <breakpoints>
-<point x="195" y="108"/>
+<point x="490" y="9"/>
+<point x="8" y="8"/>
+<point x="9" y="117"/>
+<point x="99" y="118"/>
+<point x="100" y="173"/>
 </breakpoints>
 </connection>
 <connection obj1="OutdoorTemperature" port1="setPoint" obj2="OutdoorAir" port2="temperature" strict="false">
@@ -115,76 +113,72 @@
 </connection>
 <connection obj1="IndoorAir" port1="airProperties" obj2="OutdoorAir" port2="airProperties" strict="false">
 <breakpoints>
+<point x="428" y="226"/>
+<point x="197" y="223"/>
 <point x="159" y="235"/>
 </breakpoints>
 </connection>
 <connection obj1="Students" port1="dQdT" obj2="IndoorAir" port2="qs" strict="false">
 <breakpoints>
-<point x="302" y="193"/>
-<point x="305" y="243"/>
+<point x="283" y="172"/>
 </breakpoints>
 </connection>
 <connection obj1="IndoorAir" port1="qs" obj2="ElectricHeater" port2="dQdT" strict="false">
-<breakpoints>
-<point x="474" y="230"/>
-</breakpoints>
+<breakpoints/>
 </connection>
 <connection obj1="ONOFFcontroller" port1="processValue" obj2="IndoorAir" port2="tout" strict="false">
 <breakpoints>
-<point x="836" y="292"/>
+<point x="188" y="405"/>
+<point x="492" y="404"/>
+<point x="490" y="230"/>
 </breakpoints>
 </connection>
 <connection obj1="Auditoorium" port1="airVolume" obj2="IndoorAir" port2="airVolume" strict="false">
 <breakpoints>
-<point x="459" y="457"/>
-<point x="375" y="457"/>
+<point x="450" y="226"/>
 </breakpoints>
 </connection>
 <connection obj1="Auditoorium" port1="dQdT" obj2="IndoorAir" port2="qs" strict="false">
 <breakpoints>
-<point x="549" y="423"/>
-<point x="549" y="254"/>
+<point x="384" y="332"/>
+<point x="384" y="210"/>
 </breakpoints>
 </connection>
 <connection obj1="Auditoorium" port1="airProperties" obj2="OutdoorAir" port2="airProperties" strict="false">
 <breakpoints>
-<point x="157" y="385"/>
+<point x="456" y="382"/>
+<point x="216" y="382"/>
 </breakpoints>
 </connection>
 <connection obj1="IndoorAir" port1="tout" obj2="Auditoorium" port2="tIndoor" strict="false">
 <breakpoints>
-<point x="514" y="341"/>
-<point x="404" y="359"/>
+<point x="473" y="235"/>
 </breakpoints>
 </connection>
 <connection obj1="TemperatureGraph" port1="ys" obj2="IndoorAir" port2="tout" strict="false">
 <breakpoints>
-<point x="397" y="97"/>
+<point x="516" y="110"/>
 </breakpoints>
 </connection>
 <connection obj1="OutdoorAir" port1="airProperties" obj2="NaturalVentilation" port2="airProperties" strict="false">
-<breakpoints>
-<point x="78" y="494"/>
-</breakpoints>
+<breakpoints/>
 </connection>
 <connection obj1="Auditoorium" port1="airVolume" obj2="NaturalVentilation" port2="airVolume" strict="false">
-<breakpoints>
-<point x="567" y="477"/>
-</breakpoints>
+<breakpoints/>
 </connection>
 <connection obj1="IndoorAir" port1="tout" obj2="NaturalVentilation" port2="inTemperature" strict="false">
-<breakpoints/>
+<breakpoints>
+<point x="534" y="162"/>
+<point x="537" y="366"/>
+<point x="320" y="364"/>
+</breakpoints>
 </connection>
 <connection obj1="NaturalVentilation" port1="dQdT" obj2="IndoorAir" port2="qs" strict="false">
 <breakpoints>
-<point x="830" y="448"/>
-<point x="761" y="339"/>
+<point x="309" y="210"/>
 </breakpoints>
 </connection>
 <connection obj1="ONOFFcontroller" port1="signal" obj2="ElectricHeater" port2="signal" strict="false">
-<breakpoints>
-<point x="1038" y="81"/>
-<point x="1041" y="220"/>
-</breakpoints>
+<breakpoints/>
 </connection>
 </scheme>
