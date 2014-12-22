@@ -44,6 +44,13 @@ Utilities
 .clear{/*clear fix*/
 	clear: both;
 }
+.floatleft{
+	float:left;
+	}
+.floatright{
+	float:right;
+	}
+
 
 sub {
     vertical-align: sub;
@@ -252,7 +259,7 @@ Content
 	}
 .contentContainer  figure{
 	text-align:center;
-	 padding: 1.0em 0 0.5em 0; 
+	padding: 1.0em 1.0em 0.5em 1.0em; 
 }
 
 .contentContainer  figcaption{
@@ -261,13 +268,13 @@ Content
 	}
 .contentContainer em{
 	font-family: 'Courier New', sans-serif; 
-	font-weight: bold; 
 	font-style: normal;
 	font-size:1.2em;
 	}
 	
 .contentContainer ul{
 	list-style:none;	
+	padding-top: 20px;
 }	
 
 .contentContainer	li:before {
@@ -284,10 +291,15 @@ Content
 	position: relative;
 	margin-bottom:10px; 
 }
+.contentContainer a{
+	color:#006666;
+	}
 
 .equation{
 	text-align:center;
 	}
+
+
 /*
 ---------------------------
 Footer
