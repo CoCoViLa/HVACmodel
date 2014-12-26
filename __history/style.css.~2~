@@ -57,7 +57,7 @@ sub {
     font-size: smaller;
 } 
 sup {
-    vertical-align: top;
+    vertical-align: sup;
     font-size: smaller;
 } 
 /*

@@ -56,10 +56,7 @@ sub {
     vertical-align: sub;
     font-size: smaller;
 } 
-sup {
-    vertical-align: top;
-    font-size: smaller;
-} 
+
 /*
 ---------------------------
 Main

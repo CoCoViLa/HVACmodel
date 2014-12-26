@@ -8,11 +8,11 @@
 <p>Schedulers are required for setting up values of the components, which depend on time. For example, it can be temperature set point or schedule for heater and/or ventilation. Currently there are only three schedulers, which are able to control some variable in time for 24h. In future, it is possible to implement other components for week period or a year.</p>
 
 <h2 id="schedulerConst">Scheduler: constant value</h2>
-<figure class="floatleft">
+<p><figure class="floatleft">
 <img src="articles/img/scheduler24hConstantPic.png" alt="scheduler24hConstantPic.png">
 <figcaption>Visual</figcaption>
 </figure>
-<p><em>Scheduler24hConstant</em> has only one property, such as <em>setPoint</em> (default value=21), which can be used for setting up any value. In case of <em>Scheduler24hConstant</em>,  the value does not change in time.</p>
+<em>Scheduler24hConstant</em> has only one property, such as <em>setPoint</em> (default value=21), which can be used for setting up any value. In case of <em>Scheduler24hConstant</em>,  the value does not change in time.</p>
 <div class="clear"></div>
 
 <figure>
@@ -34,11 +34,11 @@
 </figure>
 
 <h2 id="schedulerStep">Scheduler: step value</h2>
-<figure class="floatleft">
+<p><figure class="floatleft">
 <img src="articles/img/scheduler24hStepPic.png" alt="scheduler24hStepPic.png">
 <figcaption>Visual</figcaption>
 </figure>
-<p><em>Scheduler24hStep</em> has several properties: two for setting up time interval: <em>nightBegin</em> (default value=22, meaning 22.00), <em>nightEnd</em> (default value 6, meaning 6.00) and two for setting up set up values: <em>setPointDay</em> (default value=21), <em>setPointNight</em> (default value=18). This component is used together with <em>Clock</em>. So, as input we have signal from <em>Clock</em>.  In case of <em>Scheduler24hStep</em>,  the value changes over the time so that we have <em>setPointNight</em> value for night period and <em>setPointDay</em> for day period.</p>. 
+<em>Scheduler24hStep</em> has several properties: two for setting up time interval: <em>nightBegin</em> (default value=22, meaning 22.00), <em>nightEnd</em> (default value 6, meaning 6.00) and two for setting up set up values: <em>setPointDay</em> (default value=21), <em>setPointNight</em> (default value=18). This component is used together with <em>Clock</em>. So, as input we have signal from <em>Clock</em>.  In case of <em>Scheduler24hStep</em>,  the value changes over the time so that we have <em>setPointNight</em> value for night period and <em>setPointDay</em> for day period.</p>. 
 <div class="clear"></div>
 
 <figure>
@@ -60,11 +60,11 @@
 </figure>
 
 <h2 id="schedulerSin">Scheduler: sinusoid value</h2>
-<figure class="floatleft">
+<p><figure class="floatleft">
 <img src="articles/img/scheduler24hSinPic.png" alt="scheduler24hSinPic.png">
 <figcaption>Visual</figcaption>
 </figure>
-<p><em>Scheduler24hSin</em> has two properties for setting up interval of the value: <em>min</em> (default value=-10) and <em>max</em> (default value=30) and one parameter for setting up time point <em>maxTime</em> (default value=14, meaning 14.00), where maximal value of function is reached. This component is used together with <em>Clock</em>. So, as input we have signal from <em>Clock</em>.  In case of <em>Scheduler24hSin</em>,  the value changes over the time so that the <em>max</em> value is reached at <em>maxTime</em>.</p>
+<em>Scheduler24hSin</em> has two properties for setting up interval of the value: <em>min</em> (default value=-10) and <em>max</em> (default value=30) and one parameter for setting up time point <em>maxTime</em> (default value=14, meaning 14.00), where maximal value of function is reached. This component is used together with <em>Clock</em>. So, as input we have signal from <em>Clock</em>.  In case of <em>Scheduler24hSin</em>,  the value changes over the time so that the <em>max</em> value is reached at <em>maxTime</em>.</p>
 
 
 <div class="clear"></div>
