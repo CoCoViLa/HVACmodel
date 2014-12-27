@@ -1,31 +1,26 @@
 <h1>Utilities</h1>
-<p>There are three additional components: <em>Graph</em>,  <em>Timer</em> and  <em>Process</em>. They are not directly connected to the field of thermal modeling, but required for simulation and visualization.</p>
 
-<h2>Component: Graph</h2>
- <p><em>Graph</em>  is the component for drawing multi-series graphs. In our case, we use it for drawing temperature and cost graphs. It can process one or more series. Mainly, there are two important parameters:  <em>seriesNames</em> and  <em>lineThickness</em>, which help to adjust visual properties of the graph.</p>
 
-<figure>
-		<img src="articles/img/graphVisual.png" alt="graphVisual.png">
-		<figcaption>Figure: Multi-series graph</figcaption>
-	</figure> 
+<ul>
+<li><a href="#process">Process</a></li>
+<li><a href="#timer">Clock</a></li>
+</ul>
 
-<p>Also, the  x  axis in our case is time, although one unit in the series is considered to be minute, the numbers on axis are given by hours.</p>
-
-<p>NB! This component must be marked as  <em>Static </em>.</p>
-
-<h2>Component: Process</h2>
-<p> <em>Process </em> is the component that controls the simulation process. The most important parameter here is  <em>time</em>, that is given in minutes and shows how long the simulation is running. For example, 1440 is one day, 2880 is two days.</p>
-<figure>
-		<img src="articles/img/processVisual.png" alt="processVisual.png">
-		<figcaption>Figure: Process</figcaption>
-	</figure> 
+<h2 id="process">Process</h2>
+<p> <em>Process </em> is the component that controls the simulation process.
+ The most important parameter here is  <em>time</em>, that is given in minutes and shows how long the simulation is running.
+  For example, 1440 is one day, 2880 is two days.</p>
 
 <p>NB! This class must be marked as  <em>Super</em>.</p>
 
+<h2 id="timer">Clock</h2>
+<p> <em>Timer</em>  is the component that produces time signal at each time interval. 
+In our simulation, time interval is chosen to be one minute. </p>
+<p>This component must be connected to each component, there time is required, for example to <em>Scheduler</em>.</p>
+
+
+
+<h2>Component: Process</h2>
+
+
 <h2>Component: Timer</h2>
-<p> <em>Timer</em>  is the component that produces time signal at each time interval. In our simulation, time interval is chosen to be one minute. </p>
-<figure>
-		<img src="articles/img/timerVisual.png" alt="timerVisual.png">
-		<figcaption>Figure:Timer</figcaption>
-	</figure> 
-<p>This component must be connected to each component, there time is required:  <em>DisplayDN</em>,  <em>Graph</em> and  <em>OutdoorConditions</em>.</p>

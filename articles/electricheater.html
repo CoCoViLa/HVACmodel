@@ -1,33 +1,13 @@
-<h1>Component: Air conditioner</h1>
-<p>The <em>AirConditioner</em>  models the processes of heating and cooling air. <em>AirConditioner</em> can be described as air pump with constant air flow <em>flowRate</em>. </p>
+<h1>Component: Electric heater </h1>
+<figure class="floatleft">
+<img src="articles/img/heaterPic.png" alt="heaterPic.png">
+<figcaption>Visual</figcaption>
+</figure>
+<p><em>ElectricHeaterPanel</em> component models the heat flow from electric heater. The heat flow is defined by property
+<em>heatFlow</em> in Watts (defaul value - 1000W).
+</p>
 <figure>
-		<img src="articles/img/conditionerVisual.png" alt="conditionerVisual.png" >
-		<figcaption>Figure: Visual representation</figcaption>
-	</figure> 
-<p>The temperature of heating <em>heaterTemperature</em> and cooling <em>coolerTemperature</em> elements are defined by user. </p>
-<figure>
-		<img src="articles/img/conditionerProperties.png" alt="conditionerProperties.png" >
-		<figcaption>Figure: Air conditioner</figcaption>
-	</figure> 
+<img src="articles/img/heaterProperties.png" alt="heaterProperties.png">
+<figcaption>Properties</figcaption>
+</figure>
 
-<p>Default values of parameters are:</p>
-<ul>
-	<li>Heater temperature 50(C);
-		<li>Cooler temperature 5(C);
-			<li>Flow rate 1(kg/sec);
-</ul>
-
-<p>According to the <em>signal</em> the device choses between heating or cooling processes. Those processes are not linear. Both processes (heating and cooling) implements the same equation, although, for heating T is heater temperature, for cooling T is cooler temperature.</p>
-<div class="equation">
-	<p>HF=(T<sub>heater</sub>-T<sub>room</sub>)* FR * c<sub>air</sub></p>
-</div>
-<p>where:</p>
-<ul>
-	<li> HF - heat flow (J/min);
-	<li>T<sub>heater</sub> - heater temperature (C);
-	<li>T<sub>room</sub> - room temperature (C);
-	<li>FR - air flow rate (kg/min);
-	<li>c<sub>air</sub> - air heat capacity (J/kg-K);
-</ul>
-
- <p>The output value is <em>heatFlow</em>, thew inputs are air parameters: air heat capacity <em>c</em>, current indoor temperature <em>roomTemperature</em> and <em>signal</em> from <em>Thermostat</em>.</p>

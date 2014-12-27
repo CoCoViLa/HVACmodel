@@ -278,7 +278,8 @@ Content
 .contentContainer ul{
 	list-style:none;	
 	padding-top: 20px;
-}	
+}
+
 
 .contentContainer	li:before {
 	font-size:0.7em;
@@ -300,6 +301,8 @@ Content
 
 .equation{
 	text-align:center;
+		font-family: 'Courier New', sans-serif; 
+	font-style: normal;
 	}
 
 
