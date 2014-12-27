@@ -280,6 +280,11 @@ Content
 	padding-top: 20px;
 }
 
+.contentContainer ul ul{
+	list-style:none;	
+	padding-top: 2px;
+}
+
 
 .contentContainer	li:before {
 	font-size:0.7em;
@@ -295,6 +300,22 @@ Content
 	position: relative;
 	margin-bottom:10px; 
 }
+
+.contentContainer ul li li:before{
+	font-size:0.7em;
+	font-weight:bold;
+	color:#FF420E;
+	content: '-';
+	position: absolute;
+	right: 100%;
+	margin-right:5px;
+}
+
+.contentContainer ul li li{
+	position: relative;
+	margin-bottom:5px; 
+}
+
 .contentContainer a{
 	color:#006666;
 	}

@@ -9,6 +9,7 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 	<script src="script/articleLoad.js"></script>
 	<script src="script/upButton.js"></script>
+		<script src="script/submenu.js"></script>
 	
 </head>
 
@@ -48,8 +49,9 @@
 <nav>
 <ul>
 	<a href="articles/about.html"> <li> About</li></a>
-	<a href="articles/components.html"><li>Components</li></a>
-	<ul>
+	<a href="articles/components.html"><li id="componentsmenu">Components</li></a>
+
+	<ul id="componentssubmenu">
 		<a href="articles/scheduler.html"> <li>Scheduler</li></a>
 		<a href="articles/controller.html"> <li>Controller</li></a>
 		<a href="articles/weather.html"><li>Weather</li></a>
@@ -62,9 +64,9 @@
 		<a href="articles/graph.html"><li>Graph</li></a>
 		<a href="articles/utilities.html"><li>Utilities</li></a>
 	</ul>
-	<a href="articles/simulation.html"><li>Simulations</li></a>
-	<ul>
-	<a href="articles/auditoorium.html"><li>Auditoorium</li></a>
+	<a href="articles/simulation.html"><li id="simulationsmenu">Simulations</li></a>
+	<ul id="simulationssubmenu">
+	<a href="articles/auditoorium.html"><li>Auditorium</li></a>
 	</ul>
 	<a href="articles/downloads.html"><li>Downloads</li></a>
 </ul>
