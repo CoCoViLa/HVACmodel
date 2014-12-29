@@ -1,26 +1,30 @@
 <h1>Utilities</h1>
-
-
 <ul>
 <li><a href="#process">Process</a></li>
 <li><a href="#timer">Clock</a></li>
 </ul>
 
 <h2 id="process">Process</h2>
+<figure class="floatleft">
+<img src="articles/img/processPic.png" alt="processPic.png">
+<figcaption>Visual</figcaption>
+</figure>
 <p> <em>Process </em> is the component that controls the simulation process.
  The most important parameter here is  <em>time</em>, that is given in minutes and shows how long the simulation is running.
   For example, 1440 is one day, 2880 is two days.</p>
-
+<figure>
+<img src="articles/img/processProperties.png" alt="processProperties.png">
+<figcaption>Properties</figcaption>
+</figure>
 <p>NB! This class must be marked as  <em>Super</em>.</p>
 
 <h2 id="timer">Clock</h2>
+<figure class="floatleft">
+<img src="articles/img/timerPic.png" alt="timerPic.png">
+<figcaption>Visual</figcaption>
+</figure>
 <p> <em>Timer</em>  is the component that produces time signal at each time interval. 
 In our simulation, time interval is chosen to be one minute. </p>
 <p>This component must be connected to each component, there time is required, for example to <em>Scheduler</em>.</p>
 
 
-
-<h2>Component: Process</h2>
-
-
-<h2>Component: Timer</h2>

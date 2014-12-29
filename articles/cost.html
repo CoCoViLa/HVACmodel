@@ -1,2 +1,21 @@
 <h1>Component: Cost function</h1>
+<figure class="floatleft">
+<img src="articles/img/costPic.png" alt="costPic.png">
+<figcaption>Visual</figcaption>
+</figure>
+<p><em>Cost</em> implements the cost function. One of it’s properties 
+ is price of the electricity (kW−h). We suppose that all electric energy is transformed to heat energy. 
+ Also, usually we have price for (kW−h), but in our model we have (J), so we transform between them using
+1kW−h= 3.6e6J.
+</p>
+<figure>
+<img src="articles/img/costProperties.png" alt="costProperties.png">
+<figcaption>Properties</figcaption>
+</figure>
+<p>The output value of <em>Cost</em> component is accumulated cost of the house heat-
+ing/cooling. The input is the heat flow from heater/cooler.</p>
+<figure>
+<img src="articles/img/costResult.png" alt="costResult.png" width="550px">
+<figcaption>Cost graph</figcaption>
+</figure>
 
