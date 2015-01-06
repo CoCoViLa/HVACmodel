@@ -39,8 +39,13 @@ class MultiSeriesGraph {
 
         JFreeChart chart = ChartFactory.createXYLineChart( "", "time(min)", "value",
                 dataset, PlotOrientation.VERTICAL, true, true, false );
+chart.removeLegend();
 
         plot = chart.getXYPlot();
+
+plot.setBackgroundPaint(Color.black);
+plot.setRangeGridlinePaint(Color.darkGray);
+plot.setDomainGridlinePaint(Color.darkGray);
 
         frame = new ChartFrame( "Graph", chart );
         frame.addWindowListener( new WindowAdapter() {
