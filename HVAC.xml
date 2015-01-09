@@ -231,6 +231,36 @@
 	</fields>
 </class>
 <class type="class">
+	<name>BuildingPlanType2</name>
+	<description>Model of building with flat roof</description>
+	<icon>images/ico_roomType2.png</icon>
+<graphics>
+<bounds x="0" y="0" width="68" height="70"/>
+<image x="10" y="10" width="50" height="49" path="\images\roomType1.png" fixed="true" />
+<text string="t" colour="-16777216" x="53" y="21" fontname="Arial" fontstyle="0" fontsize="10" transparency="255"/>
+<text string="q" colour="-16777216" x="15" y="41" fontname="Arial" fontstyle="0" fontsize="10" transparency="255"/>
+<text string="V" colour="-16777216" x="16" y="22" fontname="Arial" fontstyle="0" fontsize="10" transparency="255"/>
+<text string="pr" colour="-16777216" x="48" y="51" fontname="Arial" fontstyle="0" fontsize="10" transparency="255"/>
+</graphics>
+	<ports>
+		<port name="airProperties" type="alias" x="53" y="63" portConnection="" strict="false" />
+		<port name="dQdT" type="double" x="8" y="40" portConnection="" strict="false" />
+		<port name="airVolume" type="double" x="19" y="6" portConnection="" strict="false" />
+		<port name="tIndoor" type="double" x="49" y="6" portConnection="" strict="false" />
+	</ports>
+	<fields>
+		<field name="buildingLength" type="double" value="6" />
+		<field name="buildingWidth" type="double" value="3" />
+		<field name="buildingHeight" type="double" value="2.5" />
+		<field name="windowHeight" type="double" value="1" />
+		<field name="windowWidth" type="double" value="2" />
+		<field name="flatRoofUValue" type="double" value="0.8" />
+		<field name="wallUValue" type="double" value="0.317" />
+		<field name="windowUValue" type="double" value="2.8" />
+		<field name="floorUValue" type="double" value="0.7" />
+	</fields>
+</class>
+<class type="class">
 	<name>Occupants</name>
 	<description>People in room</description>
 	<icon>images/ico_occupants.png</icon>
@@ -309,4 +339,5 @@
 		<field name="price" type="double" value="0.0588" />
 	</fields>
 </class>
+
 </package>
