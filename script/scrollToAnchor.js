@@ -1,1 +1,10 @@
-$(function(){    $(".scroll").click(    function(event) {    	event.preventDefault();    	$('html,body').animate( { scrollTop:$(this.hash).offset().top } , 1000);    });});/*    	event.preventDefault();    	$('html,body').animate( { scrollTop:$(this.hash).offset().top } , 1000);} );*/
+$(function(){
+    $(".scroll").click(
+    function(event) {
+    	event.preventDefault();
+    	$('html,body').animate( { scrollTop:$(this.hash).offset().top } , 1000);
+    });
+});
+/*    	event.preventDefault();
+    	$('html,body').animate( { scrollTop:$(this.hash).offset().top } , 1000);} );*/
+

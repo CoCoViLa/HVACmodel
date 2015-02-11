@@ -1,1 +1,61 @@
-<!-- Auditooriumis (pindalaga 5x5 m, kõrgusega 3 m) on -üks sein aken (soojusülekande teguriga 1,2 W/(m2∙K) )-küttesüsteem, mis positsioonregulaatoriga (ON-OFF) hoiab temperatuuri 20 °C ± 2 °C lülitades elektriradiaatorit võimsusega 1 kW (sisse temperatuuril +18 °C ja välja temperatuuril +22 °C)-ventilatsioon, mis vahetab tunni jooksul kogu õhu välisõhuga         õhu soojusmahtuvus 0,718 kJ/(kg∙K), õhu tihedus 1,19 kg/m3, välistemperatuur +10 °CEelda et õhk auditooriumis on ühtlaselt segunenud ning soojusvahetus kõrvalruumidega (läbi lae, põranda ja seina) on tühineEsita auditooriumi õhu temperatuuri kirjeldav võrrandMillise aja on elektriradiaator lülitatud sisse ja millise aja on ta lülitatud väljatühjas auditooriumiskui auditooriumis viibib 8 inimest (igaüks 80 W)Millisel välistemperatuuril ei suuda küttesüsteem hoida soovitud temperatuuriKui suur on energia kokkuhoid kuiauditooriumi mittekasutamisel lülitada välja ventilatsioonlülitada ööseks välja küte --><h1>Auditorium</h1>Suppose we have auditorium with dimensions 5m by 5m by 3 m, there are:<ul><li>one wall window (with dimensions 5m by 5m)</li><li>heating system with on-off controller, which holds the temperatire 20 °C ± 2 °C by switching on and off electric radiatior with 1 kW (turn off at temperature +22 °C and turn on at temperature +18 °C)</li><li>ventilation, which changes 1 air volume during 1 hour by outdoor air. Air heat capacity 0,718 kJ/(kg∙K) and air density 1,19 kg/m3. Outdoor temperature  +10 °C</li><li>Consider that air in the room is mixed uniformly and heat flow through walls, floor and ceiling is empty.</li></ul><p>The general scheme for modeling such simulation is presented in <em>turnOffHeaterAtNightRoomT1Ventilation.syn</em>.</p><figure><img src="articles/img/auditoriumSimulation.png" alt="auditoriumSimulation.png" width="550px"><figcaption><em>turnOffHeaterAtNightRoomT1Ventilation.syn</em></figcaption></figure><p>The simulation results are presented on the following figures.</p><p>The heating works all the time, the room is empty.</p><figure><img src="articles/img/auditoriumAllTimeHeating.png" alt="auditoriumAllTimeHeating.png" width="550px"><figcaption>The heater works all time</figcaption></figure><figure><img src="articles/img/auditoriumAllTimeHeatingCost.png" alt="auditoriumAllTimeHeatingCost.png" width="550px"><figcaption>The heater works all time. Cost value</figcaption></figure><p>The heating is turned off at night, the room is empty.</p><figure><img src="articles/img/auditoriumTurnoffHeating.png" alt="auditoriumTurnoffHeating.png" width="550px"><figcaption>The heater is turned off at night</figcaption></figure><figure><img src="articles/img/auditoriumTurnoffHeatingCost.png" alt="auditoriumTurnoffHeatingCost.png" width="550px"><figcaption>The heater is turned off at night. Cost value</figcaption></figure>
+<!-- Auditooriumis (pindalaga 5x5 m, kõrgusega 3 m) on 
+-üks sein aken (soojusülekande teguriga 1,2 W/(m2∙K) )
+-küttesüsteem, mis positsioonregulaatoriga (ON-OFF) hoiab temperatuuri 20 °C ± 2 °C lülitades elektriradiaatorit võimsusega 1 kW (sisse temperatuuril +18 °C ja välja temperatuuril +22 °C)
+-ventilatsioon, mis vahetab tunni jooksul kogu õhu välisõhuga 
+        õhu soojusmahtuvus 0,718 kJ/(kg∙K), õhu tihedus 1,19 kg/m3, välistemperatuur +10 °C
+Eelda et õhk auditooriumis on ühtlaselt segunenud ning soojusvahetus kõrvalruumidega (läbi lae, põranda ja seina) on tühine
+
+Esita auditooriumi õhu temperatuuri kirjeldav võrrand
+Millise aja on elektriradiaator lülitatud sisse ja millise aja on ta lülitatud välja
+tühjas auditooriumis
+kui auditooriumis viibib 8 inimest (igaüks 80 W)
+
+Millisel välistemperatuuril ei suuda küttesüsteem hoida soovitud temperatuuri
+Kui suur on energia kokkuhoid kui
+auditooriumi mittekasutamisel lülitada välja ventilatsioon
+lülitada ööseks välja küte -->
+
+<h1>Auditorium</h1>
+Suppose we have auditorium with dimensions 5m by 5m by 3 m, there are:
+<ul>
+<li>one wall window (with dimensions 5m by 5m)</li>
+<li>heating system with on-off controller, which holds the temperatire 20 °C ± 2 °C by switching on and off electric radiatior with 1 kW (turn off at temperature +22 °C and turn on at temperature +18 °C)</li>
+<li>ventilation, which changes 1 air volume during 1 hour by outdoor air. Air heat capacity 0,718 kJ/(kg∙K) and air density 1,19 kg/m3. Outdoor temperature  +10 °C</li>
+<li>Consider that air in the room is mixed uniformly and heat flow through walls, floor and ceiling is empty.</li>
+</ul>
+
+<p>The general scheme for modeling such simulation is presented in <em>turnOffHeaterAtNightRoomT1Ventilation.syn</em>.</p>
+
+<figure>
+<img src="articles/img/auditoriumSimulation.png" alt="auditoriumSimulation.png" width="550px">
+<figcaption><em>turnOffHeaterAtNightRoomT1Ventilation.syn</em></figcaption>
+</figure>
+
+<p>The simulation results are presented on the following figures.</p>
+
+<p>The heating works all the time, the room is empty.</p>
+<figure>
+<img src="articles/img/auditoriumAllTimeHeating.png" alt="auditoriumAllTimeHeating.png" width="550px">
+<figcaption>The heater works all time</figcaption>
+</figure>
+
+<figure>
+<img src="articles/img/auditoriumAllTimeHeatingCost.png" alt="auditoriumAllTimeHeatingCost.png" width="550px">
+<figcaption>The heater works all time. Cost value</figcaption>
+</figure>
+
+
+<p>The heating is turned off at night, the room is empty.</p>
+<figure>
+<img src="articles/img/auditoriumTurnoffHeating.png" alt="auditoriumTurnoffHeating.png" width="550px">
+<figcaption>The heater is turned off at night</figcaption>
+</figure>
+
+<figure>
+<img src="articles/img/auditoriumTurnoffHeatingCost.png" alt="auditoriumTurnoffHeatingCost.png" width="550px">
+<figcaption>The heater is turned off at night. Cost value</figcaption>
+</figure>
+
+
+
+
