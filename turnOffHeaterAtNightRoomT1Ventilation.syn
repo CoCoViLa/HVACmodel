@@ -98,7 +98,7 @@
 <field name="n" type="int" value="1"/>
 </fields>
 </object>
-<object name="MultiSeriesGraph_0" type="MultiSeriesGraph" static="false">
+<object name="MultiSeriesGraph_0" type="MultiSeriesGraph" static="true">
 <properties x="610" y="134" xsize="1.0" ysize="1.0" strict="false"/>
 <fields>
 <field name="repaintImmediately" type="boolean" value="true"/>

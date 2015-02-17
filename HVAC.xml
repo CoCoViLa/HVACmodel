@@ -26,7 +26,7 @@
 	<icon>images/ico_multiSeriesGraph.png</icon>
 <graphics>
 <bounds x="0" y="0" width="64" height="65"/>
-<image x="7" y="4" width="50" height="50" path="\images\multiSeriesGraph.png" fixed="true" />
+<image x="7" y="4" width="50" height="50" path="\images\MultiSeriesGraph.png" fixed="true" />
 </graphics>
 	<ports>
 		<port name="ys" type="double[]" x="6" y="26" portConnection="" strict="false" multi="true" />
