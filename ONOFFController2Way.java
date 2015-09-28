@@ -11,7 +11,7 @@ state=signal;
 
 	
     }@*/
-int compute(int sig, double processValue, double setPoint, double tolerance) {
+int compute(int sig, double processValue, double setPoint, double hysteresis) {
 	int s=0;
 	if(processValue>(setPoint+hysteresis)){
 		s=0;//ready
